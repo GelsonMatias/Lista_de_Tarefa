@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+
+import { Routes, Route } from 'react-router-dom'
+import AddTodo from './todolist/AddTodo';
+import TodoList from "./todolist/TodoList";
+import EditTodo from './todolist/EditTodo';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto px-2 max-w-5xl pt-10 md:pt-2">
+      <h1 className="text-center text-2xl font-bold underline my-5">Listas de Tarefas com Redux e Tailwind</h1>
+      <Routes>
+        <Route path='/' element={<TodoList/>} />
+        <Route path='add-todo' element={<AddTodo/>}/>
+        <Route path='edit-task/:id' element={<EditTodo/>}/>
+      </Routes>
+      
+      
     </div>
   );
 }
